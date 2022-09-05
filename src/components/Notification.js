@@ -13,7 +13,7 @@ const Notification = (props) => {
   return notification ? <div style={style}> {notification} </div> : null
 }
 const mapStateToProps = (state) => {
-  return { notification: state.notification }
+  return { notification: state.notification ? state.notification.content : null }
 }
 
 const ConnectedNotification = connect(mapStateToProps)(Notification)
